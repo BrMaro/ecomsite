@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Jumia Kenya | Online Shopping{% endblock %}</title>
+
+        <style type = "text/css">
+            header{
+                font-family: "Inter", "Montserrat", "DM Sans", "Raleway", "Roboto";
+                background-color: white;
+            }
+            .sticky-header .navbar .container {
+                display: flex;
+            }
+            
+            .sticky-header {
+                height: 80px; 
+                margin: 0; 
+            }
+
+            .navbar {
+                height: 100%; 
+            }
+
+            .container {
+                display: flex;
+                align-items: center; 
+                margin: 0 auto; 
+                max-width: 1200px; 
+            }
+
+            .flex-column {
+                padding: 10px; 
+            }
+
+            .logo-column {
+                flex: 1; 
+                /* background-color: lightblue;  */
+            }
+
+            .search-column {
+                flex: 2; 
+                /* background-color: lightgreen;  */
+            }
+
+            .search-form {
+                display: flex; 
+                gap:10px;
+            }
+
+            .search-input {
+                flex: 8; /* Input takes 8 parts of the available space */
+                padding: 5px;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+            }
+
+            .search-button {
+                flex: 1; 
+                background-color: orange;
+                color: white;
+                border: none;
+                padding: 5px 10px;
+                border-radius: 3px;
+                box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow */
+                cursor: pointer;
+                transition: background-color 0.3s ease; /* Smooth transition */
+                font-weight: bold;
+            }
+
+            .search-button:hover {
+                background-color: #683615; 
+            }
+
+            .nav-column {
+                flex: 1; 
+                /* background-color: lightcoral;  */
+            }
+
+            .nav-buttons {
+                display: flex; /* Use flexbox for the nav buttons */
+                justify-content: space-between; /* Distribute items evenly */
+            }
+
+            .nav-buttons a {
+                padding: 5px 10px;
+                text-decoration: none;
+                color: black;
+            }
+
+
+            /* Additional styling for search input and button */
+            .search-form input[type="search"],
+            .search-form input[type="submit"] {
+                margin: 0;
+                width: 100%;
+            }
+
+            body{
+                background-color:orange;
+            }
+
+        </style>
+    </head>
+    
+    <body>
+        <header class="sticky-header">
+            <nav class="navbar">
+                <div class="container">
+                    <div class="logo-column flex-column">
+                        <h1 class="logo"><a href="/">JUMIA</a></h1>
+                    </div>
+                    <div class="search-column flex-column">
+                        <form action="/search" method="get" class="search-form">
+                            <input type="search" id="search" name="q" placeholder="Search product" class="search-input">
+                            <button type="submit" id="submit-btn" class="search-button">SEARCH</button>
+                        </form>
+                    </div>
+                    <div class="nav-column flex-column">
+                        <div class="nav-buttons flex-row">
+                            <a href="#">Account</a>
+                            <a href="#">Help</a>
+                            <a href="#">Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        <footer>
+            <div class="container">
+                <!-- Footer content here -->
+                <p>&copy; 2024 Jumia Clone. All rights reserved.</p>
+            </div>
+        </footer>
+    </body>
+</html>
